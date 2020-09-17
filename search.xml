@@ -121,6 +121,18 @@
       </tags>
   </entry>
   <entry>
+    <title>浏览器实现全屏</title>
+    <url>/2018/09/14/H5/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%8F/</url>
+    <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FullScreen</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> isFullscreen = <span class="built_in">document</span>.fullScreen || <span class="built_in">document</span>.mozFullScreen || <span class="built_in">document</span>.webkitIsFullScreen;</span><br><span class="line">    <span class="keyword">if</span>(!isFullscreen) &#123; <span class="comment">//进入全屏,多重短路表达式</span></span><br><span class="line">        (el.requestFullscreen &amp;&amp; el.requestFullscreen()) ||</span><br><span class="line">        (el.mozRequestFullScreen &amp;&amp; el.mozRequestFullScreen()) ||</span><br><span class="line">        (el.webkitRequestFullscreen &amp;&amp; el.webkitRequestFullscreen()) || (el.msRequestFullscreen &amp;&amp; el.msRequestFullscreen());</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">//退出全屏,三目运算符</span></span><br><span class="line">        <span class="built_in">document</span>.exitFullscreen ? <span class="built_in">document</span>.exitFullscreen() :</span><br><span class="line">            <span class="built_in">document</span>.mozCancelFullScreen ? <span class="built_in">document</span>.mozCancelFullScreen() :</span><br><span class="line">            <span class="built_in">document</span>.webkitExitFullscreen ? <span class="built_in">document</span>.webkitExitFullscreen() : <span class="string">''</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>H5</category>
+      </categories>
+      <tags>
+        <tag>浏览器</tag>
+        <tag>全屏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>父页面调用frame中的函数</title>
     <url>/2018/08/23/H5/%E7%88%B6%E9%A1%B5%E9%9D%A2%E8%B0%83%E7%94%A8frame%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">parent.window.frames[<span class="number">0</span>].frameElement.contentWindow.Fun()</span><br></pre></td></tr></table></figure>]]></content>
@@ -129,6 +141,17 @@
       </categories>
       <tags>
         <tag>iframe</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>禁止浏览器返回</title>
+    <url>/2018/10/19/H5/%E7%A6%81%E6%AD%A2%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%94%E5%9B%9E/</url>
+    <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//防止页面后退 </span></span><br><span class="line">history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="built_in">document</span>.URL); </span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'popstate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">    history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="built_in">document</span>.URL);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>H5</category>
+      </categories>
+      <tags>
+        <tag>禁止浏览器返回</tag>
       </tags>
   </entry>
   <entry>
@@ -144,18 +167,6 @@
       </tags>
   </entry>
   <entry>
-    <title>浏览器实现全屏</title>
-    <url>/2018/09/14/H5/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%8F/</url>
-    <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FullScreen</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> isFullscreen = <span class="built_in">document</span>.fullScreen || <span class="built_in">document</span>.mozFullScreen || <span class="built_in">document</span>.webkitIsFullScreen;</span><br><span class="line">    <span class="keyword">if</span>(!isFullscreen) &#123; <span class="comment">//进入全屏,多重短路表达式</span></span><br><span class="line">        (el.requestFullscreen &amp;&amp; el.requestFullscreen()) ||</span><br><span class="line">        (el.mozRequestFullScreen &amp;&amp; el.mozRequestFullScreen()) ||</span><br><span class="line">        (el.webkitRequestFullscreen &amp;&amp; el.webkitRequestFullscreen()) || (el.msRequestFullscreen &amp;&amp; el.msRequestFullscreen());</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">//退出全屏,三目运算符</span></span><br><span class="line">        <span class="built_in">document</span>.exitFullscreen ? <span class="built_in">document</span>.exitFullscreen() :</span><br><span class="line">            <span class="built_in">document</span>.mozCancelFullScreen ? <span class="built_in">document</span>.mozCancelFullScreen() :</span><br><span class="line">            <span class="built_in">document</span>.webkitExitFullscreen ? <span class="built_in">document</span>.webkitExitFullscreen() : <span class="string">''</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>H5</category>
-      </categories>
-      <tags>
-        <tag>浏览器</tag>
-        <tag>全屏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>base64转blob对象</title>
     <url>/2018/09/19/Javascript/base64%E8%BD%ACblob%E5%AF%B9%E8%B1%A1/</url>
     <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dataURItoBlob</span>(<span class="params">base64Data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> byteString;</span><br><span class="line">    <span class="keyword">if</span>(base64Data.split(<span class="string">','</span>)[<span class="number">0</span>].indexOf(<span class="string">'base64'</span>) &gt;= <span class="number">0</span>)</span><br><span class="line">        byteString = atob(base64Data.split(<span class="string">','</span>)[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        byteString = <span class="built_in">unescape</span>(base64Data.split(<span class="string">','</span>)[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">var</span> mimeString = base64Data.split(<span class="string">','</span>)[<span class="number">0</span>].split(<span class="string">':'</span>)[<span class="number">1</span>].split(<span class="string">';'</span>)[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> ia = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(byteString.length);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; byteString.length; i++) &#123;</span><br><span class="line">        ia[i] = byteString.charCodeAt(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Blob([ia], &#123;</span><br><span class="line">        type: mimeString</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
@@ -165,17 +176,6 @@
       <tags>
         <tag>base64</tag>
         <tag>blob</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>禁止浏览器返回</title>
-    <url>/2018/10/19/H5/%E7%A6%81%E6%AD%A2%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%94%E5%9B%9E/</url>
-    <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//防止页面后退 </span></span><br><span class="line">history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="built_in">document</span>.URL); </span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'popstate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">    history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="built_in">document</span>.URL);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>H5</category>
-      </categories>
-      <tags>
-        <tag>禁止浏览器返回</tag>
       </tags>
   </entry>
   <entry>
