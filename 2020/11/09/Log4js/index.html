@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="fs," />
+  <meta name="keywords" content="log4js," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="遍历结束后执行回调函数每个文件或文件夹会遍历一次，遍历的总次数为文件和文件夹的和，遍历一次数量减1，为0时表示遍历结束，可以执行回调函数 1234567891011121314151617181920212223242526272829303132333435363738//根据树的遍历的原理遍历文件夹，先根遍历var fs = require(&apos;fs&apos;);var path = &apos;web/js&apos;;">
-<meta name="keywords" content="fs">
+<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435const log4js = require(&apos;log4js&apos;);log4js.configure(&amp;#123;    replaceConsole: true,    appenders: &amp;#123;        cheese: &amp;#123;            //">
+<meta name="keywords" content="log4js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="先根遍历文件夹">
-<meta property="og:url" content="im.imzhiyong.cn/2018/08/16/Node/先根遍历文件夹/index.html">
+<meta property="og:title" content="log4js">
+<meta property="og:url" content="im.imzhiyong.cn/2020/11/09/Log4js/index.html">
 <meta property="og:site_name" content="我的笔记">
-<meta property="og:description" content="遍历结束后执行回调函数每个文件或文件夹会遍历一次，遍历的总次数为文件和文件夹的和，遍历一次数量减1，为0时表示遍历结束，可以执行回调函数 1234567891011121314151617181920212223242526272829303132333435363738//根据树的遍历的原理遍历文件夹，先根遍历var fs = require(&apos;fs&apos;);var path = &apos;web/js&apos;;">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435const log4js = require(&apos;log4js&apos;);log4js.configure(&amp;#123;    replaceConsole: true,    appenders: &amp;#123;        cheese: &amp;#123;            //">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-09-16T03:44:06.880Z">
+<meta property="og:updated_time" content="2020-11-09T06:19:32.470Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="先根遍历文件夹">
-<meta name="twitter:description" content="遍历结束后执行回调函数每个文件或文件夹会遍历一次，遍历的总次数为文件和文件夹的和，遍历一次数量减1，为0时表示遍历结束，可以执行回调函数 1234567891011121314151617181920212223242526272829303132333435363738//根据树的遍历的原理遍历文件夹，先根遍历var fs = require(&apos;fs&apos;);var path = &apos;web/js&apos;;">
+<meta name="twitter:title" content="log4js">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435const log4js = require(&apos;log4js&apos;);log4js.configure(&amp;#123;    replaceConsole: true,    appenders: &amp;#123;        cheese: &amp;#123;            //">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="im.imzhiyong.cn/2018/08/16/Node/先根遍历文件夹/"/>
+  <link rel="canonical" href="im.imzhiyong.cn/2020/11/09/Log4js/"/>
 
 
 
 
 
-  <title>先根遍历文件夹 | 我的笔记</title>
+  <title>log4js | 我的笔记</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="im.imzhiyong.cn/2018/08/16/Node/先根遍历文件夹/">
+    <link itemprop="mainEntityOfPage" href="im.imzhiyong.cn/2020/11/09/Log4js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘志勇">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">先根遍历文件夹</h1>
+          <h1 class="post-title" itemprop="name headline">log4js</h1>
         
 
         <div class="post-meta">
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T18:59:11+08:00">
-                2018-08-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-09T14:15:24+08:00">
+                2020-11-09
               </time>
             
 
@@ -361,8 +361,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Node/" itemprop="url" rel="index">
-                    <span itemprop="name">Node</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -398,8 +398,7 @@
       
 
       
-        <h1 id="遍历结束后执行回调函数"><a href="#遍历结束后执行回调函数" class="headerlink" title="遍历结束后执行回调函数"></a>遍历结束后执行回调函数</h1><p>每个文件或文件夹会遍历一次，遍历的总次数为文件和文件夹的和，遍历一次数量减1，为0时表示遍历结束，可以执行回调函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据树的遍历的原理遍历文件夹，先根遍历</span></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="string">'web/js'</span>;</span><br><span class="line"><span class="keyword">var</span> len = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> picstr = <span class="string">''</span>;</span><br><span class="line">explorer(path, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'picstr:'</span>, picstr);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">explorer</span>(<span class="params">path, callback</span>) </span>&#123;</span><br><span class="line">    fs.readdir(path, <span class="function"><span class="keyword">function</span> (<span class="params">err, files</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//err 为错误 , files 文件名列表包含文件夹与文件</span></span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'error:\n'</span> + err);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        len += files.length;</span><br><span class="line">        files.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">file</span>) </span>&#123;</span><br><span class="line">            fs.stat(path + <span class="string">'/'</span> + file, <span class="function"><span class="keyword">function</span> (<span class="params">err, stat</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (err) &#123; <span class="built_in">console</span>.log(err); <span class="keyword">return</span>; &#125;</span><br><span class="line">                <span class="keyword">if</span> (stat.isDirectory()) &#123;</span><br><span class="line">                    <span class="comment">// 如果是文件夹遍历</span></span><br><span class="line">                    explorer(path + <span class="string">'/'</span> + file, callback);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// 读出所有的文件</span></span><br><span class="line">                    len--;</span><br><span class="line">                    picstr += path + <span class="string">'/'</span> + file + <span class="string">'*'</span>;                    </span><br><span class="line">                    <span class="keyword">if</span>(len == <span class="number">0</span>)&#123;</span><br><span class="line">                        callback()</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;)</span><br><span class="line">        len--;</span><br><span class="line">        <span class="keyword">if</span>(len == <span class="number">0</span>)&#123;</span><br><span class="line">            callback()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> log4js = <span class="built_in">require</span>(<span class="string">'log4js'</span>);</span><br><span class="line">log4js.configure(&#123;</span><br><span class="line">    replaceConsole: <span class="literal">true</span>,</span><br><span class="line">    appenders: &#123;</span><br><span class="line">        cheese: &#123;</span><br><span class="line">            <span class="comment">// 设置类型为 dateFile</span></span><br><span class="line">            type: <span class="string">'dateFile'</span>,</span><br><span class="line">            <span class="comment">// 配置文件名为 myLog.log</span></span><br><span class="line">            filename: <span class="string">'logs/mylog.log'</span>,</span><br><span class="line">            <span class="comment">// 指定编码格式为 utf-8</span></span><br><span class="line">            encoding: <span class="string">'utf-8'</span>,</span><br><span class="line">            <span class="comment">// 配置 layout，此处使用自定义模式 pattern</span></span><br><span class="line">            layout: &#123;</span><br><span class="line">                type: <span class="string">"pattern"</span>,</span><br><span class="line">                <span class="comment">// 配置模式，下面会有介绍</span></span><br><span class="line">                pattern: <span class="string">'&#123;"level":"%p","date":"%d","data":%m &#125;'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 日志文件按日期（天）切割</span></span><br><span class="line">            pattern: <span class="string">"yyyy-MM-dd"</span>,</span><br><span class="line">            <span class="comment">// 回滚旧的日志文件时，保证以 .log 结尾 （只有在 alwaysIncludePattern 为 false 生效）</span></span><br><span class="line">            keepFileExt: <span class="literal">true</span>,</span><br><span class="line">            <span class="comment">// 输出的日志文件名是都始终包含 pattern 日期结尾</span></span><br><span class="line">            alwaysIncludePattern: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    categories: &#123;</span><br><span class="line">        <span class="comment">// 设置默认的 categories</span></span><br><span class="line">        <span class="keyword">default</span>: &#123; <span class="attr">appenders</span>: [<span class="string">'cheese'</span>], <span class="attr">level</span>: <span class="string">'debug'</span> &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> logger = log4js.getLogger();</span><br><span class="line">logger.info(<span class="string">"info is ..."</span>);</span><br><span class="line">logger.error(<span class="string">"err is ..."</span>);</span><br><span class="line">logger.debug(<span class="string">"debug is ..."</span>);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -416,7 +415,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/fs/" rel="tag"># fs</a>
+            <a href="/tags/log4js/" rel="tag"># log4js</a>
           
         </div>
       
@@ -429,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/16/Ext/combobox模糊匹配/" rel="next" title="combobox模糊匹配">
-                <i class="fa fa-chevron-left"></i> combobox模糊匹配
+              <a href="/2020/09/17/reg-intercept-string/" rel="next" title="通过正则表达式截取字符串中的字符">
+                <i class="fa fa-chevron-left"></i> 通过正则表达式截取字符串中的字符
               </a>
             
           </div>
@@ -438,10 +437,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/16/H5/video视频截图/" rel="prev" title="video视频截图">
-                video视频截图 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -493,17 +488,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -583,22 +569,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#遍历结束后执行回调函数"><span class="nav-number">1.</span> <span class="nav-text">遍历结束后执行回调函数</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
